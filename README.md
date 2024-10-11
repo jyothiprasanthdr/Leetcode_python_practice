@@ -1,1 +1,1 @@
-# Leetcode_python_practise
+# Leetcode_python_practice
