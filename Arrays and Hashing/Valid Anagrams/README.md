@@ -1,5 +1,3 @@
-[alt text](https://file%2B.vscode-resource.vscode-cdn.net/Users/Jyoth_Prasanth/Desktop/Screenshot%202024-10-10%20at%2011.51.22%E2%80%AFPM.png?version%3D1728622299988)
-
-
+![Screenshot 2024-10-10 at 11 51 22 PM](https://github.com/user-attachments/assets/f28c5345-4a37-4594-ac71-27ee4ece4f26)
 
 Beats: 51.29% Runtime and 56.39% Memory!
