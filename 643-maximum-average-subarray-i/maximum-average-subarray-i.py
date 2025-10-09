@@ -9,7 +9,8 @@ class Solution:
       
             
             wind_sum = wind_sum + nums[r+1]-nums[l]
-            max_sum= max(max_sum, wind_sum)
+            if wind_sum > max_sum:
+                max_sum = wind_sum
             l+=1
             r+=1
         return max_sum/k
