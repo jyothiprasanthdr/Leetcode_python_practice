@@ -1,5 +1,6 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
+        if len(s) < 2: return len(s)
         window = set()
         ans = 0
         l=0
