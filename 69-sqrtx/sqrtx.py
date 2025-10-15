@@ -11,9 +11,12 @@ class Solution:
 
             m = (l+r)//2
 
-            if m*m <=x :
+            if m*m <x :
                l=m+1
                res=m
+            elif m*m==x:
+                return m
+
             else:
                 r=m-1
 
