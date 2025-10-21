@@ -1,6 +1,18 @@
 class Solution:
     def lengthOfLastWord(self, s: str) -> int:
-        t = s.strip().split(" ")
-        return len(t[-1])
+      
+        count =0
+        found=False
 
+        for ch in reversed(s):
+            
+            if ch.isalpha():
+                count+=1
+                found=True
+            elif found:
+                return count
         
+        return count
+
+
+            
