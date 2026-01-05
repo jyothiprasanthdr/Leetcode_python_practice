@@ -3,11 +3,15 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
+        
 
-        slow =0
-        for fast in range(len(nums)):
-            if nums[fast]!=0:
-                nums[slow],nums[fast]=nums[fast], nums[slow]
-                slow+=1
-        return nums
+        l = r = 0
+
+        while r < len(nums):
+
+            if nums[r]!=0:
+
+                nums[l], nums[r] = nums[r], nums[l]
+                l+=1
+            r+=1
         
