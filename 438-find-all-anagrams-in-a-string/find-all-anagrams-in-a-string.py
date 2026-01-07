@@ -1,24 +1,26 @@
 class Solution:
     def findAnagrams(self, s: str, p: str) -> List[int]:
         
-        if len(s) < len(p):
+        if len(p) > len(s):
             return []
 
-        res = []
-
-        window_count = [0]*26
-        p_count = [0]*26
-        a= ord('a')
+        check = [0]*26
+        window = [0]*26
+        offset = ord('a')
         for i in range(len(p)):
-            p_count[ ord(p[i]) - a ]+=1
-            window_count[ord(s[i])-a]+=1
-
-        if p_count== window_count:
+            check[ord(p[i])- offset]+=1
+            window[ord(s[i]) - offset]+=1
+        res = []
+        if check ==window:
             res.append(0)
+
         for i in range(len(p), len(s)):
 
-            window_count[ ord(s[i- len(p)])-a]-=1
-            window_count[ord(s[i])-a ]+=1
-            if window_count == p_count:
-                res.append(i - len(p)+1)
+           window[ ord(s[i - len(p)]) -offset] -=1
+           window[ord(s[i])-offset]+=1
+           if window == check:
+            res.append(i - len(p)+1)
+
         return res
+
+
