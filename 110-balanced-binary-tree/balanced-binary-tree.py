@@ -7,11 +7,10 @@
 class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
 
-
         def check(root):
 
             if not root:
-                return (True, -1)
+                return (True, 0)
 
             left_ok, left_h = check(root.left)
             right_ok, right_h = check(root.right)
