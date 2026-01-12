@@ -10,7 +10,7 @@ class Solution:
         def check(root):
 
             if not root:
-                return (True, 0)
+                return (True, -1)
 
             left_ok, left_h = check(root.left)
             right_ok, right_h = check(root.right)
