@@ -4,17 +4,19 @@
 class Solution:
     def firstBadVersion(self, n: int) -> int:
 
-        l, r = 1, n
-
+        l=1
+        r=n
+        boundary=-1
         while l<=r:
 
             m = (l+r)//2
 
             if isBadVersion(m):
-                res = m
-                r =m-1
+                boundary=m
+                r=m-1
             else:
                 l=m+1
-        return res
+        return boundary
 
+        
         
