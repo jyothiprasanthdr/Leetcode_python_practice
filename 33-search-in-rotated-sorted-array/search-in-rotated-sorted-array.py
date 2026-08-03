@@ -10,7 +10,7 @@ class Solution:
             if arr[m]==target:
                 return m
 
-            if arr[l]<= arr[m]: # left sorted side
+            if arr[l]<=arr[m]: # left sorted side
 
                 if target > arr[m] or target < arr[l]:
                     l=m+1
