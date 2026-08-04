@@ -1,29 +1,26 @@
 class Solution:
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
-
-        def can_eat(piles,h,k):
-            hours=0
-            for p in piles:
-
-                hours += math.ceil(float(p/m))
-            return hours<=h
-
-        l,r= 1, max(piles)
-        res =float(inf)
+        l, r = 1, max(piles)
+        res=-1
         while l<=r:
 
-            m = (l+r)//2
+            m= l+ (r-l)//2
 
-            if can_eat(piles, h, m):
-
-                res = min(res,m)
+            if self.feasible(m, piles, h):
+                res=m
                 r=m-1
-
             else:
                 l=m+1
+    
         return res
 
+    def feasible(self,k, piles, h):
+        
+        time=0
+        for p in piles:    
+                time+= math.ceil(p/k)
+                if time >h:
+                    return False
+     
+        return time <=h
     
-
-
-
