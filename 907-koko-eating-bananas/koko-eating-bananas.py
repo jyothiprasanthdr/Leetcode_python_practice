@@ -1,26 +1,28 @@
 class Solution:
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
-        l, r = 1, max(piles)
-        res=-1
+        
+        l = 1
+        r = max(piles)
+        ans=-1
         while l<=r:
 
-            m= l+ (r-l)//2
+            m = (l+r)//2
 
-            if self.feasible(m, piles, h):
-                res=m
+            if self.canFinish(piles, m,h):
+                ans=m   
                 r=m-1
             else:
                 l=m+1
-    
-        return res
+        return ans
 
-    def feasible(self,k, piles, h):
-        
-        time=0
-        for p in piles:    
-                time+= math.ceil(p/k)
-                if time >h:
-                    return False
-     
-        return time <=h
-    
+    def canFinish(self, piles, m, h):
+
+        t=0
+        for p in piles:
+
+            t+= math.ceil(p/m)
+            if t >h:
+                return False
+
+            
+        return t<=h
