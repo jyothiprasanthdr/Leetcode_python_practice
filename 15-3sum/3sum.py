@@ -22,7 +22,7 @@ class Solution:
                 else:
                     res.append([val, nums[l], nums[r]])
                     l=l+1
-                    
+                    r=r-1
                     while l<r and nums[l] == nums[l-1]:
                         l+=1
 
