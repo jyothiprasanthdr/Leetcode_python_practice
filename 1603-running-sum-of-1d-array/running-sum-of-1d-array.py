@@ -1,9 +1,10 @@
 class Solution:
-    def runningSum(self, nums: List[int]) -> List[int]:
+    def runningSum(self, nums: list[int]) -> list[int]:
 
-        prefix = [nums[0]]
+        for i,num in enumerate(nums):
 
-        for i in range(1, len(nums)):
-            prefix.append(prefix[-1]+ nums[i])
-        return prefix
+            if i>0:
+                nums[i]=nums[i]+nums[i-1]
+        return nums
+
         
