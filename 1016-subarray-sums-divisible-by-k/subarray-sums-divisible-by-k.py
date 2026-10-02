@@ -6,12 +6,11 @@ class Solution:
 
         totalsum = 0
         count=0
-        for i, num in enumerate(nums):
+        for num in nums:
 
             totalsum+= num
             rem = totalsum % k
             if rem in prefix_cnt:
-                
                 count+= prefix_cnt[rem]
             prefix_cnt[rem]+=1
         return count
