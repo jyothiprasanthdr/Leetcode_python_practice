@@ -1,14 +1,15 @@
 class Solution:
     def findMaxLength(self, nums: List[int]) -> int:
-        seen = {0:-1}
-        prefixsum=0
-        max_length=0
+        prefix_cnt= {0:-1}
+        max_len=0
+        prefixSum=0
 
-        for i, num in enumerate(nums):
+        for i,n in enumerate(nums):
+            
+            prefixSum+= 1 if n==1 else -1
+            if prefixSum in prefix_cnt:
+                max_len=max(max_len, i- prefix_cnt[prefixSum])
 
-            prefixsum+= 1 if num==1 else -1
-            if prefixsum in seen:
-                max_length= max(max_length, i- seen[prefixsum])
             else:
-                seen[prefixsum]=i
-        return max_length
+                prefix_cnt[prefixSum]=i
+        return max_len            
