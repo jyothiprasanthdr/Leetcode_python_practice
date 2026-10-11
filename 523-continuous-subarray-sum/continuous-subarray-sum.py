@@ -6,8 +6,9 @@ class Solution:
 
         for i,num in enumerate(nums):
             running_sum += num
-            if running_sum %k in prefix:
-                if i - prefix[running_sum%k] >=2:
+            remainder= running_sum %k
+            if remainder  in prefix:
+                if i - prefix[remainder] >=2:
                     return True
             else:
                 prefix[running_sum%k]=i
